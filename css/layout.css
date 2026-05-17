@@ -1,1 +1,69 @@
+.navbar {
+    padding: 40px;
+    border-radius: 12px;
+}
 
+.projects-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: #111827;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 20px;
+}
+
+footer {
+    padding: 60px 10%;
+    background: #111827;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #B8C0CC;
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 700px;
+}
+
+input,
+textarea {
+    background: #111827;
+    border: 1px solid #1F2937;
+    padding: 16px;
+    color: white;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+button {
+    background: #00B3FF;
+    border: none;
+    padding: 16px;
+    color: white;
+    cursor: pointer;
+}
