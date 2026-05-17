@@ -1,1 +1,21 @@
+@media (max-width: 900px) {
 
+    .services-preview,
+    .projects-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+}
