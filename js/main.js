@@ -1,1 +1,1 @@
-
+console.log('WALNOR loaded');
