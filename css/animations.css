@@ -1,1 +1,16 @@
+.project-card,
+.service-card,
+.primary-button,
+.secondary-button {
+    transition: 0.3s;
+}
 
+.project-card:hover,
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    opacity: 0.8;
+}
