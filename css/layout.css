@@ -1,45 +1,31 @@
-/* =========================
-   WALNOR LAYOUT SYSTEM
-   VERSION 1
-   ========================= */
-
+/* ==========================================================================
+   WALNOR LAYOUT SYSTEM - VERSION 1 (OPTIMIZED)
+   ========================================================================== */
 
 /* NAVBAR */
-
 .navbar {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 24px 48px;
-
-    background:
-        rgba(20,22,24,0.75);
-
+    background: rgba(20, 22, 24, 0.75);
     backdrop-filter: blur(14px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.04);
+    -webkit-backdrop-filter: blur(14px); /* Podpora pro Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 /* LOGO */
-
 .nav-logo {
     width: 170px;
+    display: block;
 }
 
 /* NAVIGATION */
-
 .navbar nav {
     display: flex;
     align-items: center;
@@ -48,36 +34,28 @@
 
 .navbar nav a {
     color: var(--text-soft);
-
     font-size: 15px;
     font-weight: 500;
-
-    transition: 0.25s ease;
+    transition: color 0.25s ease;
 }
 
-.navbar nav a:hover {
-    color: var(--accent);
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--accent); /* Aktivní stránka a hover svítí inženýrským tealem */
 }
 
 /* HERO */
-
 .hero {
-
     min-height: 100vh;
-
     display: flex;
     align-items: center;
-
     padding-top: 140px;
     padding-bottom: 100px;
-
     position: relative;
-
     overflow: hidden;
 }
 
 /* HERO CONTENT */
-
 .hero-content {
     max-width: 760px;
 }
@@ -88,12 +66,10 @@
 
 .hero-content p {
     max-width: 620px;
-
     margin-bottom: 42px;
 }
 
 /* HERO BUTTONS */
-
 .hero-buttons {
     display: flex;
     gap: 18px;
@@ -101,51 +77,27 @@
 }
 
 /* SECTIONS */
-
 section {
-    padding:
-        120px
-        0;
+    padding: 120px 0;
 }
 
 /* SECTION TITLES */
-
 .section-title {
     margin-bottom: 56px;
 }
 
 /* SERVICES GRID */
-
 .services-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(260px,1fr)
-        );
-
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 28px;
 }
 
 /* SERVICE CARD */
-
 .service-card {
     padding: 42px;
-
     min-height: 220px;
-
-    transition: 0.3s ease;
 }
-
-.service-card:hover {
-    transform: translateY(-6px);
-
-    border-color:
-        rgba(79,209,197,0.25);
-}
-
-/* SERVICE CARD TEXT */
 
 .service-card h3 {
     margin-bottom: 18px;
@@ -155,46 +107,26 @@ section {
     font-size: 16px;
 }
 
-/* PROJECTS GRID */
-
+/* PROJECTS GRID (Úvodní stránka - statické karty) */
 .projects-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(340px,1fr)
-        );
-
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 32px;
 }
 
-/* PROJECT CARD */
-
+/* STATICKÁ KARTA PROJEKTU (Homepage) */
 .project-card {
     overflow: hidden;
-
-    transition: 0.3s ease;
 }
-
-.project-card:hover {
-    transform: translateY(-6px);
-
-    border-color:
-        rgba(79,209,197,0.25);
-}
-
-/* PROJECT IMAGE */
 
 .project-card img {
     width: 100%;
     height: 240px;
-
     object-fit: cover;
+    display: block;
 }
 
-/* PROJECT CONTENT */
-
+/* Obsah uvnitř statické karty */
 .project-content {
     padding: 28px;
 }
@@ -204,43 +136,31 @@ section {
 }
 
 /* FOOTER */
-
 footer {
     margin-top: 120px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.04);
-
-    padding:
-        60px
-        0;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 60px 0;
 }
 
 /* FOOTER LINKS */
-
 .footer-links {
     display: flex;
     flex-wrap: wrap;
-
     gap: 28px;
 }
 
 .footer-links a {
     color: var(--text-soft);
-
-    transition: 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 .footer-links a:hover {
     color: var(--accent);
 }
 
-/* LANGUAGE PAGE */
-
+/* LANGUAGE BREAK DOWN PAGE (Rozcestník) */
 .language-page {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,46 +170,28 @@ footer {
     text-align: center;
 }
 
-/* LANGUAGE LOGO */
-
 .language-logo {
     width: 240px;
-
-    margin:
-        0 auto
-        40px;
+    margin: 0 auto 40px;
+    display: block;
 }
-
-/* LANGUAGE BUTTONS */
 
 .language-buttons {
     margin-top: 40px;
-
     display: flex;
     justify-content: center;
-
     gap: 18px;
 }
 
-/* LANGUAGE BUTTON */
-
 .language-button {
-    padding:
-        16px
-        32px;
-
+    padding: 16px 32px;
     border-radius: 12px;
-
-    border:
-        1px solid
-        var(--border);
-
-    transition: 0.25s ease;
+    border: 1px solid var(--border);
+    transition: all 0.25s ease;
 }
 
 .language-button:hover {
     border-color: var(--accent);
-
-    background:
-        rgba(79,209,197,0.05);
+    background: rgba(79, 209, 197, 0.05);
+    color: var(--accent);
 }
