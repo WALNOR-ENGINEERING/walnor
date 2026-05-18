@@ -2,400 +2,157 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | WALNOR</title>
+    <link rel="icon" href="../assets/logo/favicon.png">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Services | WALNOR
-    </title>
-
-    <link rel="icon"
-          href="../assets/logo/favicon.png">
-
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="stylesheet"
-          href="../css/layout.css">
-
-    <link rel="stylesheet"
-          href="../css/responsive.css">
-
+    <!-- Jeden hlavní sloučený styl (obsahuje Layout, Design System i Responzivitu) -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
-
 <header class="navbar">
-
     <a href="index.html">
-
-        <img src="../assets/logo/walnor-logo-light.png"
-             class="nav-logo">
-
+        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
     </a>
-
     <nav>
-
-        <a href="about.html">
-            About
-        </a>
-
-        <a href="services.html">
-            Services
-        </a>
-
-        <a href="projects.html">
-            Projects
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-        <a href="../index.html">
-            CZ
-        </a>
-
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="../index.html">CZ</a>
     </nav>
-
 </header>
 
-
-<!-- HERO -->
-
-<section class="hero"
-         style="
-            min-height: 70vh;
-         ">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <h1>
-
-                Engineering Services
-                for Industrial Applications
-
-            </h1>
-
-            <p>
-
-                Technical analysis,
-                engineering interpretation
-                and optimization support
-                focused on practical industrial problems.
-
-            </p>
-
+<main>
+    <!-- HERO -->
+    <section class="hero" style="min-height: 70vh;">
+        <div class="container">
+            <div class="hero-content reveal-prep">
+                <h1>Engineering Services for Industrial Applications</h1>
+                <p>Technical analysis, engineering interpretation and optimization support focused on practical industrial problems.</p>
+            </div>
         </div>
+    </section>
 
-    </div>
+    <!-- SERVICES GRID -->
+    <section>
+        <div class="container">
+            <h2 class="section-title reveal-prep">Main Areas</h2>
 
-</section>
+            <div class="services-grid">
 
+                <!-- CFD -->
+                <div class="service-card reveal-prep">
+                    <h3>CFD Analysis</h3>
+                    <p>Airflow simulation, turbulence analysis, pressure loss evaluation, cooling optimization and industrial flow behavior.</p>
+                </div>
 
-<!-- SERVICES -->
+                <!-- THERMAL -->
+                <div class="service-card reveal-prep">
+                    <h3>Thermal Management</h3>
+                    <p>Heat transfer analysis, thermal distribution, cooling studies and temperature optimization for industrial systems.</p>
+                </div>
 
-<section>
+                <!-- STRUCTURAL -->
+                <div class="service-card reveal-prep">
+                    <h3>Structural Validation</h3>
+                    <p>Structural assessment, stress evaluation, weak point identification and engineering recommendations.</p>
+                </div>
 
-    <div class="container">
+                <!-- ROTATING -->
+                <div class="service-card reveal-prep">
+                    <h3>Rotating Systems</h3>
+                    <p>Engineering support for fans, rotating components, flow interaction and aerodynamic behavior.</p>
+                </div>
 
-        <h2 class="section-title">
+                <!-- MULTIPHASE -->
+                <div class="service-card reveal-prep">
+                    <h3>Multiphase Flow</h3>
+                    <p>Particle transport, dust behavior, separation systems and industrial flow processes involving multiple phases.</p>
+                </div>
 
-            Main Areas
-
-        </h2>
-
-        <div class="services-grid">
-
-
-            <!-- CFD -->
-
-            <div class="service-card panel">
-
-                <h3>
-                    CFD Analysis
-                </h3>
-
-                <p>
-
-                    Airflow simulation,
-                    turbulence analysis,
-                    pressure loss evaluation,
-                    cooling optimization
-                    and industrial flow behavior.
-
-                </p>
-
-            </div>
-
-
-            <!-- THERMAL -->
-
-            <div class="service-card panel">
-
-                <h3>
-                    Thermal Management
-                </h3>
-
-                <p>
-
-                    Heat transfer analysis,
-                    thermal distribution,
-                    cooling studies
-                    and temperature optimization
-                    for industrial systems.
-
-                </p>
+                <!-- ENGINEERING -->
+                <div class="service-card reveal-prep">
+                    <h3>Engineering Optimization</h3>
+                    <p>Technical interpretation, problem solving, optimization proposals and practical engineering improvements.</p>
+                </div>
 
             </div>
-
-
-            <!-- STRUCTURAL -->
-
-            <div class="service-card panel">
-
-                <h3>
-                    Structural Validation
-                </h3>
-
-                <p>
-
-                    Structural assessment,
-                    stress evaluation,
-                    weak point identification
-                    and engineering recommendations.
-
-                </p>
-
-            </div>
-
-
-            <!-- ROTATING -->
-
-            <div class="service-card panel">
-
-                <h3>
-                    Rotating Systems
-                </h3>
-
-                <p>
-
-                    Engineering support
-                    for fans,
-                    rotating components,
-                    flow interaction
-                    and aerodynamic behavior.
-
-                </p>
-
-            </div>
-
-
-            <!-- MULTIPHASE -->
-
-            <div class="service-card panel">
-
-                <h3>
-                    Multiphase Flow
-                </h3>
-
-                <p>
-
-                    Particle transport,
-                    dust behavior,
-                    separation systems
-                    and industrial flow processes
-                    involving multiple phases.
-
-                </p>
-
-            </div>
-
-
-            <!-- ENGINEERING -->
-
-            <div class="service-card panel">
-
-                <h3>
-                    Engineering Optimization
-                </h3>
-
-                <p>
-
-                    Technical interpretation,
-                    problem solving,
-                    optimization proposals
-                    and practical engineering improvements.
-
-                </p>
-
-            </div>
-
-
         </div>
+    </section>
 
-    </div>
+    <!-- PROCESS APPROACH (Zabaleno do čisté inženýrské sekvence) -->
+    <section>
+        <div class="container">
+            <h2 class="section-title reveal-prep">Engineering Approach</h2>
+            
+            <div class="service-card reveal-prep" style="padding: 60px; min-height: auto;">
+                <p style="margin-bottom: 40px; font-size: 16px;">
+                    Every project begins with understanding the real engineering problem, operating conditions and expected objectives.
+                </p>
 
-</section>
+                <div class="process-sequence">
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+                        <h4>Problem Identification</h4>
+                        <p>We analyze your operating conditions, collect input geometry and define the exact physical boundaries of the problem.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+                        <h4>Advanced Simulation</h4>
+                        <p>Using state-of-the-art numerical solvers (CFD/FEA) to run precise thermal, fluid flow, or structural computations.</p>
+                    </div>
 
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+                        <h4>Engineering Interpretation</h4>
+                        <p>The objective is not only to provide simulation outputs, but also meaningful interpretation and technical recommendations.</p>
+                    </div>
 
-<!-- PROCESS -->
-
-<section>
-
-    <div class="container">
-
-        <div class="panel"
-             style="
-                padding: 60px;
-             ">
-
-            <h2 style="
-                margin-bottom: 36px;
-             ">
-
-                Engineering Approach
-
-            </h2>
-
-            <p style="
-                margin-bottom: 28px;
-            ">
-
-                Every project begins
-                with understanding
-                the real engineering problem,
-                operating conditions
-                and expected objectives.
-
-            </p>
-
-            <p style="
-                margin-bottom: 28px;
-            ">
-
-                The objective is not only
-                to provide simulation outputs,
-                but also meaningful interpretation,
-                technical recommendations
-                and practical optimization possibilities.
-
-            </p>
-
-            <p>
-
-                The final output may include
-                visualizations,
-                engineering reports,
-                technical summaries
-                and optimization proposals.
-
-            </p>
-
+                    <div class="process-step">
+                        <span class="step-number">04</span>
+                        <h4>Optimization & Deliverables</h4>
+                        <p>The final output includes rich visualizations, comprehensive engineering reports, and practical design improvements.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section>
-
-    <div class="container">
-
-        <div class="panel"
-             style="
-                padding: 60px;
-                text-align: center;
-             ">
-
-            <h2 style="
-                margin-bottom: 24px;
-            ">
-
-                Need engineering analysis?
-
-            </h2>
-
-            <p style="
-                max-width: 720px;
-                margin:
-                    0 auto
-                    36px;
-            ">
-
-                WALNOR provides
-                engineering support
-                for industrial systems,
-                optimization problems
-                and technical analysis projects.
-
-            </p>
-
-            <a href="contact.html"
-               class="button button-primary">
-
-                Request Analysis
-
-            </a>
-
+    <!-- CTA -->
+    <section>
+        <div class="container">
+            <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
+                <h2 style="margin-bottom: 24px;">Need engineering analysis?</h2>
+                <p style="max-width: 720px; margin: 0 auto 36px;">WALNOR provides engineering support for industrial systems, optimization problems and technical analysis projects.</p>
+                <a href="contact.html" class="primary-button">Request Analysis</a>
+            </div>
         </div>
-
-    </div>
-
-</section>
-
+    </section>
+</main>
 
 <!-- FOOTER -->
-
 <footer>
-
     <div class="container">
-
         <div class="footer-links">
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="services.html">
-                Services
-            </a>
-
-            <a href="projects.html">
-                Projects
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="terms.html">
-                Terms
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
         </div>
-
     </div>
-
 </footer>
 
+<!-- Načtení skriptů pro scroll animace a funkčnost -->
+<script src="../js/animation.js"></script>
 
 </body>
 </html>
