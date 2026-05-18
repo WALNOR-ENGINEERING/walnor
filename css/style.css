@@ -189,7 +189,7 @@ p {
     top: -200px;
     right: -200px;
 
-    z-index: 0;
+    z-index: 2;
 
     pointer-events: none;
 }
@@ -213,7 +213,7 @@ p {
     bottom: -200px;
     left: -120px;
 
-    z-index: 0;
+    z-index: 2;
 
     pointer-events: none;
 }
