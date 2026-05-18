@@ -2,378 +2,154 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        WALNOR | Engineering Analysis
-    </title>
-
-    <link rel="icon"
-          href="../assets/logo/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WALNOR | Engineering Analysis & Industrial Simulations</title>
+    <link rel="icon" href="../assets/logo/favicon.png">
 
     <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="stylesheet"
-          href="../css/layout.css">
-
-    <link rel="stylesheet"
-          href="../css/responsive.css">
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
-
 <header class="navbar">
-
     <a href="index.html">
-
-        <img src="../assets/logo/walnor-logo-light.png"
-             class="nav-logo">
-
+        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
     </a>
-
     <nav>
-
-        <a href="about.html">
-            About
-        </a>
-
-        <a href="services.html">
-            Services
-        </a>
-
-        <a href="projects.html">
-            Projects
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-        <a href="../index.html">
-            CZ
-        </a>
-
+        <!-- Třída active značí aktuální stránku -->
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="../index.html">CZ</a>
     </nav>
-
 </header>
 
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <h1>
-                Engineering Analysis
-                for Industrial Systems
-            </h1>
-
-            <p>
-                CFD simulations,
-                thermal optimization,
-                structural validation
-                and technical engineering support
-                focused on real industrial problems.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="projects.html"
-                   class="button button-primary">
-
-                    View Projects
-
-                </a>
-
-                <a href="contact.html"
-                   class="button button-secondary">
-
-                    Request Analysis
-
-                </a>
-
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Engineering Analysis for Industrial Systems</h1>
+                <p>
+                    Advanced CFD simulations, thermal optimization, and structural validation designed to solve real-world industrial problems and improve system efficiency.
+                </p>
+                <div class="hero-buttons">
+                    <!-- Opraveno na tvé přesné CSS třídy -->
+                    <a href="projects.html" class="primary-button">Explore Our Work</a>
+                    <a href="contact.html" class="secondary-button">Request Analysis</a>
+                </div>
             </div>
-
         </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section>
-
-    <div class="container">
-
-        <h2 class="section-title">
-            Services
-        </h2>
-
-        <div class="services-grid">
-
-
-            <div class="service-card panel">
-
-                <h3>
-                    CFD Analysis
-                </h3>
-
-                <p>
-                    Airflow,
-                    pressure loss,
-                    turbulence,
-                    cooling,
-                    rotating systems
-                    and industrial flow optimization.
-                </p>
-
-            </div>
-
-
-            <div class="service-card panel">
-
-                <h3>
-                    Thermal Management
-                </h3>
-
-                <p>
-                    Heat transfer analysis,
-                    cooling optimization,
-                    thermal distribution
-                    and efficiency improvements.
-                </p>
-
-            </div>
-
-
-            <div class="service-card panel">
-
-                <h3>
-                    Structural Validation
-                </h3>
-
-                <p>
-                    Structural assessment,
-                    stress distribution,
-                    weak point identification
-                    and engineering recommendations.
-                </p>
-
-            </div>
-
-
-            <div class="service-card panel">
-
-                <h3>
-                    Engineering Optimization
-                </h3>
-
-                <p>
-                    Technical interpretation,
-                    problem solving,
-                    design improvements
-                    and industrial engineering support.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FEATURED PROJECTS -->
-
-<section>
-
-    <div class="container">
-
-        <h2 class="section-title">
-            Featured Projects
-        </h2>
-
-        <div class="projects-grid">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project-card panel">
-
-                <img src="../assets/projects/project-placeholder.png">
-
-                <div class="project-content">
-
-                    <h3>
-                        Cyclone Separator Optimization
-                    </h3>
-
+    <!-- SERVICES -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card panel">
+                    <h3>CFD Analysis</h3>
                     <p>
-                        Airflow optimization
-                        and pressure reduction
-                        for industrial cyclone systems.
+                        Comprehensive simulation of airflow, pressure losses, and turbulence behavior. We specialize in cooling performance, rotating systems, and industrial flow optimization.
                     </p>
-
                 </div>
 
-            </div>
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project-card panel">
-
-                <img src="../assets/projects/project-placeholder.png">
-
-                <div class="project-content">
-
-                    <h3>
-                        Thermal Cooling Study
-                    </h3>
-
+                <div class="service-card panel">
+                    <h3>Thermal Management</h3>
                     <p>
-                        Cooling efficiency analysis
-                        for enclosed industrial systems
-                        with heat-sensitive components.
+                        Detailed heat transfer evaluation, cooling design optimization, and thermal distribution studies aimed at improving hardware stability and energy efficiency.
                     </p>
-
                 </div>
 
-            </div>
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project-card panel">
-
-                <img src="../assets/projects/project-placeholder.png">
-
-                <div class="project-content">
-
-                    <h3>
-                        Rotating Flow Simulation
-                    </h3>
-
+                <div class="service-card panel">
+                    <h3>Structural Validation</h3>
                     <p>
-                        Flow behavior analysis
-                        around rotating components
-                        and industrial fan systems.
+                        Finite element method (FEM) assessments focusing on stress distribution, mechanical integrity, weak point identification, and actionable engineering recommendations.
                     </p>
-
                 </div>
 
+                <div class="service-card panel">
+                    <h3>Engineering Optimization</h3>
+                    <p>
+                        Technical interpretation of complex data, professional problem solving, and design iterations to support your R&D and industrial manufacturing goals.
+                    </p>
+                </div>
             </div>
-
-
         </div>
+    </section>
 
-    </div>
+    <!-- FEATURED PROJECTS -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- PROJECT 1 -->
+                <div class="project-card panel">
+                    <img src="../assets/projects/project-placeholder.png" alt="Cyclone Separator Flow Simulation">
+                    <div class="project-content">
+                        <h3>Cyclone Separator Optimization</h3>
+                        <p>Airflow optimization and pressure drop reduction for high-efficiency industrial separation systems.</p>
+                    </div>
+                </div>
 
-</section>
+                <!-- PROJECT 2 -->
+                <div class="project-card panel">
+                    <img src="../assets/projects/project-placeholder.png" alt="Thermal Cooling Evaluation">
+                    <div class="project-content">
+                        <h3>Thermal Cooling Study</h3>
+                        <p>Cooling efficiency analysis and thermal stress mitigation for enclosed systems with heat-sensitive components.</p>
+                    </div>
+                </div>
 
-
-<!-- CONTACT CTA -->
-
-<section>
-
-    <div class="container">
-
-        <div class="panel"
-             style="
-                padding: 60px;
-                text-align: center;
-             ">
-
-            <h2 style="margin-bottom: 24px;">
-
-                Need engineering support?
-
-            </h2>
-
-            <p style="
-                max-width: 700px;
-                margin:
-                    0 auto
-                    36px;
-            ">
-
-                WALNOR provides engineering analysis,
-                technical interpretation
-                and optimization support
-                for industrial applications.
-
-            </p>
-
-            <a href="contact.html"
-               class="button button-primary">
-
-                Send Inquiry
-
-            </a>
-
+                <!-- PROJECT 3 -->
+                <div class="project-card panel">
+                    <img src="../assets/projects/project-placeholder.png" alt="Rotating Fan Flow Analysis">
+                    <div class="project-content">
+                        <h3>Rotating Flow Simulation</h3>
+                        <p>Aerodynamic flow behavior analysis and efficiency improvements around rotating industrial fan systems.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-
-</section>
-
+    <!-- CONTACT CTA -->
+    <section>
+        <div class="container">
+            <div class="panel" style="padding: 60px; text-align: center;">
+                <h2 style="margin-bottom: 24px;">Need engineering support?</h2>
+                <p style="max-width: 700px; margin: 0 auto 36px;">
+                    WALNOR provides specialized engineering analyses, precise technical interpretations, and robust optimization support tailored to your industrial applications.
+                </p>
+                <!-- Opraveno na tvou přesnou CSS třídu -->
+                <a href="contact.html" class="primary-button">Send Inquiry</a>
+            </div>
+        </div>
+    </section>
+</main>
 
 <!-- FOOTER -->
-
 <footer>
-
     <div class="container">
-
         <div class="footer-links">
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="services.html">
-                Services
-            </a>
-
-            <a href="projects.html">
-                Projects
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="terms.html">
-                Terms
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
         </div>
-
     </div>
-
 </footer>
-
 
 </body>
 </html>
