@@ -2,358 +2,130 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | WALNOR</title>
+    <link rel="icon" href="../assets/logo/favicon.png">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        About | WALNOR
-    </title>
-
-    <link rel="icon"
-          href="../assets/logo/favicon.png">
-
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="stylesheet"
-          href="../css/layout.css">
-
-    <link rel="stylesheet"
-          href="../css/responsive.css">
-
+    <!-- Jeden hlavní sloučený styl (obsahuje Layout, Design System i Responzivitu) -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
-
 <header class="navbar">
-
     <a href="index.html">
-
-        <img src="../assets/logo/walnor-logo-light.png"
-             class="nav-logo">
-
+        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
     </a>
-
     <nav>
-
-        <a href="about.html">
-            About
-        </a>
-
-        <a href="services.html">
-            Services
-        </a>
-
-        <a href="projects.html">
-            Projects
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-        <a href="../index.html">
-            CZ
-        </a>
-
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="../index.html">CZ</a>
     </nav>
-
 </header>
 
-
-<!-- HERO -->
-
-<section class="hero"
-         style="
-            min-height: 70vh;
-         ">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <h1>
-
-                Engineering focused
-                on solving
-                real problems
-
-            </h1>
-
-            <p>
-
-                WALNOR provides
-                engineering analysis,
-                technical interpretation
-                and optimization support
-                for industrial systems.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section>
-
-    <div class="container">
-
-        <div class="panel"
-             style="
-                padding: 60px;
-             ">
-
-            <h2 style="
-                margin-bottom: 32px;
-            ">
-
-                Technical Approach
-
-            </h2>
-
-            <p style="
-                margin-bottom: 28px;
-            ">
-
-                The goal is not only
-                to deliver simulation results,
-                but to provide
-                understandable engineering interpretation
-                and practical recommendations.
-
-            </p>
-
-            <p style="
-                margin-bottom: 28px;
-            ">
-
-                WALNOR focuses on
-                airflow behavior,
-                thermal management,
-                structural validation,
-                rotating systems
-                and industrial optimization problems.
-
-            </p>
-
-            <p>
-
-                Every project is approached individually
-                with emphasis on
-                technical understanding,
-                realistic assumptions
-                and practical engineering value.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- VALUES -->
-
-<section>
-
-    <div class="container">
-
-        <h2 class="section-title">
-
-            Principles
-
-        </h2>
-
-        <div class="services-grid">
-
-
-            <div class="service-card panel">
-
-                <h3>
-
-                    Technical Accuracy
-
-                </h3>
-
+<main>
+    <!-- HERO -->
+    <section class="hero" style="min-height: 70vh;">
+        <div class="container">
+            <div class="hero-content reveal-prep">
+                <h1>Engineering focused on solving real problems</h1>
                 <p>
-
-                    Engineering decisions
-                    should be based on
-                    understandable technical data
-                    and realistic interpretation.
-
+                    WALNOR provides engineering analysis, technical interpretation and optimization support for industrial systems.
                 </p>
-
             </div>
-
-
-            <div class="service-card panel">
-
-                <h3>
-
-                    Practical Solutions
-
-                </h3>
-
-                <p>
-
-                    The objective is not only analysis,
-                    but also finding
-                    meaningful improvements
-                    and optimization possibilities.
-
-                </p>
-
-            </div>
-
-
-            <div class="service-card panel">
-
-                <h3>
-
-                    Individual Approach
-
-                </h3>
-
-                <p>
-
-                    Each system,
-                    geometry
-                    and industrial application
-                    requires different engineering thinking.
-
-                </p>
-
-            </div>
-
-
-            <div class="service-card panel">
-
-                <h3>
-
-                    Engineering Interpretation
-
-                </h3>
-
-                <p>
-
-                    Results alone are not enough.
-                    Understanding their meaning
-                    is often the most important part.
-
-                </p>
-
-            </div>
-
-
         </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section>
-
-    <div class="container">
-
-        <div class="panel"
-             style="
-                padding: 60px;
-                text-align: center;
-             ">
-
-            <h2 style="
-                margin-bottom: 24px;
-             ">
-
-                Looking for technical support?
-
-            </h2>
-
-            <p style="
-                max-width: 720px;
-                margin:
-                    0 auto
-                    36px;
-            ">
-
-                WALNOR provides
-                engineering analysis,
-                technical consultation
-                and optimization support
-                for industrial applications.
-
-            </p>
-
-            <a href="contact.html"
-               class="button button-primary">
-
-                Send Inquiry
-
-            </a>
-
+    <!-- ABOUT -->
+    <section>
+        <div class="container">
+            <div class="service-card reveal-prep" style="padding: 60px; min-height: auto;">
+                <h2 style="margin-bottom: 32px;">Technical Approach</h2>
+                <p style="margin-bottom: 28px;">
+                    The goal is not only to deliver simulation results, but to provide understandable engineering interpretation and practical recommendations.
+                </p>
+                <p style="margin-bottom: 28px;">
+                    WALNOR focuses on airflow behavior, thermal management, structural validation, rotating systems and industrial optimization problems.
+                </p>
+                <p>
+                    Every project is approached individually with emphasis on technical understanding, realistic assumptions and practical engineering value.
+                </p>
+            </div>
         </div>
+    </section>
 
-    </div>
+    <!-- VALUES (PRINCIPLES) -->
+    <section>
+        <div class="container">
+            <h2 class="section-title reveal-prep">Principles</h2>
+            
+            <div class="services-grid">
+                <div class="service-card reveal-prep">
+                    <h3>Technical Accuracy</h3>
+                    <p>
+                        Engineering decisions should be based on understandable technical data and realistic interpretation.
+                    </p>
+                </div>
 
-</section>
+                <div class="service-card reveal-prep">
+                    <h3>Practical Solutions</h3>
+                    <p>
+                        The objective is not only analysis, but also finding meaningful improvements and optimization possibilities.
+                    </p>
+                </div>
 
+                <div class="service-card reveal-prep">
+                    <h3>Individual Approach</h3>
+                    <p>
+                        Each system, geometry and industrial application requires different engineering thinking.
+                    </p>
+                </div>
+
+                <div class="service-card reveal-prep">
+                    <h3>Engineering Interpretation</h3>
+                    <p>
+                        Results alone are not enough. Understanding their meaning is often the most important part.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <div class="container">
+            <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
+                <h2 style="margin-bottom: 24px;">Looking for technical support?</h2>
+                <p style="max-width: 720px; margin: 0 auto 36px;">
+                    WALNOR provides engineering analysis, technical consultation and optimization support for industrial applications.
+                </p>
+                <a href="contact.html" class="primary-button">Send Inquiry</a>
+            </div>
+        </div>
+    </section>
+</main>
 
 <!-- FOOTER -->
-
 <footer>
-
     <div class="container">
-
         <div class="footer-links">
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="services.html">
-                Services
-            </a>
-
-            <a href="projects.html">
-                Projects
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="terms.html">
-                Terms
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
         </div>
-
     </div>
-
 </footer>
 
+<!-- Načtení animací pro plynulý scroll efekt -->
+<script src="../js/animation.js"></script>
 
 </body>
 </html>
