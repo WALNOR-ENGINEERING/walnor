@@ -510,17 +510,30 @@ footer {
 
 
 /* ==========================================================================
-   SCROLL ANIMATION ENGINE (Propojení s animation.js)
+   SCROLL ANIMATION ENGINE (Bezpečné řešení)
    ========================================================================== */
 
-/* Výchozí stav – bezpečné skrytí elementů */
+/* Výchozí stav: Vše je viditelné! Web bude fungovat, i kdyby vypadl proud. */
 .reveal-prep {
-    opacity: 0 !important;
-    transform: translateY(20px) !important;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Teprve až JS potvrdí, že je připraven, bezpečně elementy skryje pro animaci */
+.js-enabled .reveal-prep {
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
 }
+
+/* Stav po scrollování: JavaScript prvek odhalí */
+.js-enabled .reveal-prep.reveal-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 
 /* Stav vyvolaný přes JavaScript IntersectionObserver */
 .reveal-visible {
