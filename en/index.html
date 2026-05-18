@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WALNOR | Engineering Analysis & Industrial Simulations</title>
-    <link rel="icon" href="../assets/logo/favicon.png">
+    <link class="reveal-prep" rel="icon" href="../assets/logo/favicon.png">
 
-    <!-- CSS -->
+    <!-- Jeden hlavní sloučený styl (obsahuje Layout, Design System i Responzivitu) -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
@@ -21,7 +19,6 @@
         <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
     </a>
     <nav>
-        <!-- Třída active značí aktuální stránku -->
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
@@ -35,13 +32,13 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
+            <!-- Třída reveal-prep pro úvodní nájezd textu -->
+            <div class="hero-content reveal-prep">
                 <h1>Engineering Analysis for Industrial Systems</h1>
                 <p>
                     Advanced CFD simulations, thermal optimization, and structural validation designed to solve real-world industrial problems and improve system efficiency.
                 </p>
                 <div class="hero-buttons">
-                    <!-- Opraveno na tvé přesné CSS třídy -->
                     <a href="projects.html" class="primary-button">Explore Our Work</a>
                     <a href="contact.html" class="secondary-button">Request Analysis</a>
                 </div>
@@ -52,31 +49,32 @@
     <!-- SERVICES -->
     <section>
         <div class="container">
-            <h2 class="section-title">Services</h2>
+            <h2 class="section-title reveal-prep">Services</h2>
             
             <div class="services-grid">
-                <div class="service-card panel">
+                <!-- Každá karta má reveal-prep pro postupné zobrazování při scrollování -->
+                <div class="service-card reveal-prep">
                     <h3>CFD Analysis</h3>
                     <p>
                         Comprehensive simulation of airflow, pressure losses, and turbulence behavior. We specialize in cooling performance, rotating systems, and industrial flow optimization.
                     </p>
                 </div>
 
-                <div class="service-card panel">
+                <div class="service-card reveal-prep">
                     <h3>Thermal Management</h3>
                     <p>
                         Detailed heat transfer evaluation, cooling design optimization, and thermal distribution studies aimed at improving hardware stability and energy efficiency.
                     </p>
                 </div>
 
-                <div class="service-card panel">
+                <div class="service-card reveal-prep">
                     <h3>Structural Validation</h3>
                     <p>
                         Finite element method (FEM) assessments focusing on stress distribution, mechanical integrity, weak point identification, and actionable engineering recommendations.
                     </p>
                 </div>
 
-                <div class="service-card panel">
+                <div class="service-card reveal-prep">
                     <h3>Engineering Optimization</h3>
                     <p>
                         Technical interpretation of complex data, professional problem solving, and design iterations to support your R&D and industrial manufacturing goals.
@@ -86,14 +84,14 @@
         </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <!-- FEATURED PROJECTS (Statické ukázky na Homepage) -->
     <section>
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title reveal-prep">Featured Projects</h2>
             
             <div class="projects-grid">
                 <!-- PROJECT 1 -->
-                <div class="project-card panel">
+                <div class="project-card reveal-prep">
                     <img src="../assets/projects/project-placeholder.png" alt="Cyclone Separator Flow Simulation">
                     <div class="project-content">
                         <h3>Cyclone Separator Optimization</h3>
@@ -102,7 +100,7 @@
                 </div>
 
                 <!-- PROJECT 2 -->
-                <div class="project-card panel">
+                <div class="project-card reveal-prep">
                     <img src="../assets/projects/project-placeholder.png" alt="Thermal Cooling Evaluation">
                     <div class="project-content">
                         <h3>Thermal Cooling Study</h3>
@@ -111,7 +109,7 @@
                 </div>
 
                 <!-- PROJECT 3 -->
-                <div class="project-card panel">
+                <div class="project-card reveal-prep">
                     <img src="../assets/projects/project-placeholder.png" alt="Rotating Fan Flow Analysis">
                     <div class="project-content">
                         <h3>Rotating Flow Simulation</h3>
@@ -125,12 +123,11 @@
     <!-- CONTACT CTA -->
     <section>
         <div class="container">
-            <div class="panel" style="padding: 60px; text-align: center;">
+            <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
                 <h2 style="margin-bottom: 24px;">Need engineering support?</h2>
                 <p style="max-width: 700px; margin: 0 auto 36px;">
                     WALNOR provides specialized engineering analyses, precise technical interpretations, and robust optimization support tailored to your industrial applications.
                 </p>
-                <!-- Opraveno na tvou přesnou CSS třídu -->
                 <a href="contact.html" class="primary-button">Send Inquiry</a>
             </div>
         </div>
@@ -150,6 +147,9 @@
         </div>
     </div>
 </footer>
+
+<!-- Načtení animací pro plynulý scroll efekt -->
+<script src="../js/animation.js"></script>
 
 </body>
 </html>
