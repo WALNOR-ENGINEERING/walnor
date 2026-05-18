@@ -7,13 +7,38 @@
     <title>Projects | WALNOR</title>
     <link rel="icon" href="../assets/logo/favicon.png">
 
-    <!-- CSS -->
+    <!-- Jeden hlavní sloučený styl (obsahuje Layout, Design System i Responzivitu) -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-
-    <!-- JS (Přesunuto sem s atributem defer pro lepší výkon) -->
-    <script src="../js/main.js" defer></script>
+    
+    <!-- Interní CSS pro galerii obrázků uvnitř rozbaleného detailu -->
+    <style>
+        .project-body h4 {
+            color: var(--accent);
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .project-body p {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .gallery {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: calc(50% - 8px);
+            min-width: 260px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+    </style>
 </head>
     
 <body>
@@ -21,55 +46,55 @@
 <!-- NAVBAR -->
 <header class="navbar">
     <a href="index.html">
-        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Logo">
+        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
     </a>
     <nav>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="contact.html">Contact</a>
         <a href="../index.html">CZ</a>
     </nav>
 </header>
 
-<!-- HLAVNÍ OBSAH STRÁNKY -->
 <main>
     <!-- HERO -->
     <section class="hero" style="min-height: 70vh;">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content reveal-prep">
                 <h1>Engineering Projects and Technical Results</h1>
                 <p>Selected engineering analyses, optimization studies and industrial system evaluations focused on real-world applications.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS GRID -->
+    <!-- PROJECTS ACCORDION LIST -->
     <section>
         <div class="container">
-            <h2 class="section-title">Selected Work</h2>
+            <h2 class="section-title reveal-prep">Selected Work</h2>
 
-            <div class="projects-grid">
+            <!-- Používáme flex-kontajner ze style.css namísto gridu pro harmonikový efekt -->
+            <div class="projects-container">
 
                 <!-- PROJECT 1 -->
-                <div class="project-card panel project">
-                    <!-- Přidána přístupnost pro klikací div -->
-                    <div class="project-header" onclick="toggleProject(this)" style="cursor: pointer;" role="button" tabindex="0">
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
                         <img src="../assets/projects/project-1.png" alt="Cyclone Separator Simulation Overview">
-                        <div class="project-content">
+                        <div>
                             <h3>Cyclone Separator Flow Optimization</h3>
-                            <p>Analysis of airflow behavior, turbulence reduction and efficiency improvement in industrial separation system.</p>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Analysis of airflow behavior, turbulence reduction and efficiency improvement.</p>
                         </div>
+                        <span class="muted">Show detail</span>
                     </div>
                     
-                    <!-- Rozbalovací detail pro Projekt 1 -->
-                    <div class="project-body" style="margin-top: 20px;">
+                    <div class="project-body">
                         <h4>Problem</h4>
-                        <p>High turbulence caused efficiency loss...</p>
+                        <p>High turbulence caused significant energy losses and local erosion of the separator walls, reducing overall operational life cycle.</p>
                         <h4>Solution</h4>
-                        <p>Geometry optimization reduced vortex formation...</p>
+                        <p>Advanced CFD simulation of internal gas-solid phase interactions. Geometry optimization of the inlet nozzle reduced vortex formation.</p>
                         <h4>Result</h4>
-                        <p>−18% pressure loss, +12% efficiency</p>
+                        <p><strong>−18% pressure loss, +12% separation efficiency</strong> verified by subsequent physical testing.</p>
                         <div class="gallery">
                             <img src="../assets/projects/proj1_1.png" alt="Velocity streamline chart">
                             <img src="../assets/projects/proj1_2.png" alt="Pressure drop comparison">
@@ -78,23 +103,23 @@
                 </div>
 
                 <!-- PROJECT 2 -->
-                <div class="project-card panel project">
-                    <div class="project-header" onclick="toggleProject(this)" style="cursor: pointer;" role="button" tabindex="0">
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
                         <img src="../assets/projects/project-2.png" alt="Thermal Distribution Model">
-                        <div class="project-content">
+                        <div>
                             <h3>Thermal Distribution Study</h3>
-                            <p>Evaluation of heat transfer, cooling efficiency and thermal stability in enclosed system.</p>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Evaluation of heat transfer, cooling efficiency and thermal stability.</p>
                         </div>
+                        <span class="muted">Show detail</span>
                     </div>
 
-                    <!-- Rozbalovací detail pro Projekt 2 -->
-                    <div class="project-body" style="margin-top: 20px;">
+                    <div class="project-body">
                         <h4>Problem</h4>
-                        <p>Uneven cooling causing thermal stress in components...</p>
+                        <p>Uneven cooling rates causing severe thermal stress and premature micro-cracking in sensitive mechanical components.</p>
                         <h4>Solution</h4>
-                        <p>Redesign of cooling channels and airflow optimization...</p>
+                        <p>Transient thermal analysis to evaluate heat flux. Redesign of cooling channels and optimization of fluid delivery lines.</p>
                         <h4>Result</h4>
-                        <p>Improved thermal stability by 25%.</p>
+                        <p><strong>Improved thermal stability by 25%</strong> and completely eliminated critical localized hot-spots.</p>
                         <div class="gallery">
                             <img src="../assets/projects/proj2_1.png" alt="Temperature distribution contours">
                         </div>
@@ -102,44 +127,44 @@
                 </div>
 
                 <!-- PROJECT 3 -->
-                <div class="project-card panel project">
-                    <div class="project-header" onclick="toggleProject(this)" style="cursor: pointer;" role="button" tabindex="0">
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
                         <img src="../assets/projects/project-3.png" alt="Rotating Flow Analysis">
-                        <div class="project-content">
+                        <div>
                             <h3>Rotating Flow Analysis</h3>
-                            <p>Investigation of airflow around rotating components and aerodynamic performance.</p>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Investigation of airflow around rotating components and aerodynamic performance.</p>
                         </div>
+                        <span class="muted">Show detail</span>
                     </div>
 
-                    <!-- Rozbalovací detail pro Projekt 3 -->
-                    <div class="project-body" style="margin-top: 20px;">
+                    <div class="project-body">
                         <h4>Problem</h4>
-                        <p>Aerodynamic drag reducing mechanical efficiency...</p>
+                        <p>Excessive aerodynamic drag around high-speed rotating parts, reducing mechanical transmission efficiency.</p>
                         <h4>Solution</h4>
-                        <p>Modification of component housing for better aerodynamics...</p>
+                        <p>MRF (Moving Reference Frame) simulation to model rotational forces and modification of component housing geometry.</p>
                         <h4>Result</h4>
-                        <p>Drag reduced by 8%, overall efficiency increased.</p>
+                        <p><strong>Aerodynamic drag reduced by 8%</strong>, leading to direct savings in engine power consumption.</p>
                     </div>
                 </div>
 
                 <!-- PROJECT 4 -->
-                <div class="project-card panel project">
-                    <div class="project-header" onclick="toggleProject(this)" style="cursor: pointer;" role="button" tabindex="0">
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
                         <img src="../assets/projects/project-4.png" alt="Multiphase Particle Transport Simulation">
-                        <div class="project-content">
+                        <div>
                             <h3>Multiphase Particle Transport</h3>
-                            <p>Simulation of particle flow, dust behavior and separation efficiency in industrial environment.</p>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Simulation of particle flow, dust behavior and separation efficiency.</p>
                         </div>
+                        <span class="muted">Show detail</span>
                     </div>
 
-                    <!-- Rozbalovací detail pro Projekt 4 -->
-                    <div class="project-body" style="margin-top: 20px;">
+                    <div class="project-body">
                         <h4>Problem</h4>
-                        <p>High accumulation of dust in dead zones...</p>
+                        <p>High accumulation of dust particles in ducting dead zones, presenting an operational hazard and causing clogging.</p>
                         <h4>Solution</h4>
-                        <p>Implementation of auxiliary air jets to guide particles...</p>
+                        <p>DPM (Discrete Phase Model) track simulation to trace particle trajectories and implementation of auxiliary air jets.</p>
                         <h4>Result</h4>
-                        <p>95% dust reduction in critical areas.</p>
+                        <p><strong>95% dust reduction in critical areas</strong>, drastically lowering the maintenance window requirements.</p>
                     </div>
                 </div>
 
@@ -150,10 +175,9 @@
     <!-- CTA -->
     <section>
         <div class="container">
-            <div class="panel" style="padding:60px;text-align:center;">
-                <h2 style="margin-bottom:24px;">Need a similar analysis?</h2>
-                <p style="max-width:720px;margin:0 auto 36px;">Each project can be adapted to specific industrial requirements and engineering conditions.</p>
-                <!-- Opravena třída na .primary-button podle tvého CSS -->
+            <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
+                <h2 style="margin-bottom: 24px;">Need a similar analysis?</h2>
+                <p style="max-width: 720px; margin: 0 auto 36px;">Each project can be adapted to specific industrial requirements and engineering conditions.</p>
                 <a href="contact.html" class="primary-button">Request Analysis</a>
             </div>
         </div>
@@ -173,6 +197,10 @@
         </div>
     </div>
 </footer>
+
+<!-- NAČTENÍ SKRIPTŮ (Na konci body, zaručuje bezchybný start rozhraní) -->
+<script src="../js/animation.js"></script>
+<script src="../js/main.js"></script>
     
 </body>
 </html>
