@@ -1,23 +1,39 @@
+/* ==========================================================================
+   4. MIKROINTERAKCE (Karty, Služby a Tlačítka)
+   ========================================================================== */
+
 /* Karty projektů a služeb */
 .project-card,
-.service-card {
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+.service-card,
+.project { /* Přidali jsme sem i naši novou harmoniku .project */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.3s ease, 
+                background-color 0.3s ease;
     /* Ochrana proti rozmazávání textu při transformaci */
     backface-visibility: hidden; 
 }
 
+/* Jemné přizvednutí karty při najetí myší */
 .project-card:hover,
-.service-card:hover {
+.service-card:hover,
+.project:hover {
     transform: translateY(-5px);
 }
 
 /* Tlačítka */
 .primary-button,
 .secondary-button {
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease;
+    display: inline-block;
 }
 
 .primary-button:hover,
 .secondary-button:hover {
-    opacity: 0.85; /* Lehce jemnější zprůhlednění, 0.8 už může být moc světlé */
+    opacity: 0.85; /* Tvůj optimální poměr pro skvělou čitelnost */
+}
+
+/* Aktivní stlačení tlačítka pro lepší hmatovou odezvu */
+.primary-button:active,
+.secondary-button:active {
+    transform: scale(0.98);
 }
