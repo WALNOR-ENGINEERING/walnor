@@ -87,6 +87,7 @@ p {
 .project-card,
 .service-card,
 .project,
+.process-step,
 .language-button {
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
                 border-color 0.3s ease,
@@ -250,7 +251,36 @@ section { padding: 120px 0; }
 .service-card h3 { margin-bottom: 18px; }
 .service-card p { font-size: 16px; }
 
-/* HOMEPAGE STATICKÝ GRID (Pokud ho využíváš) */
+/* INŽENÝRSKÝ PROCES (PROCESS SEQUENCE LAYOUT) */
+.process-sequence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.step-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
+.process-step h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.process-step p {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
+/* HOMEPAGE STATICKÝ GRID */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -483,24 +513,20 @@ footer {
    SCROLL ANIMATION ENGINE (Propojení s animation.js)
    ========================================================================== */
 
+/* Výchozí stav – bezpečné skrytí elementů */
 .reveal-prep {
-    opacity: 0;
-    transform: translateY(24px);
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
     will-change: transform, opacity;
 }
 
+/* Stav vyvolaný přes JavaScript IntersectionObserver */
 .reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
-
-.hero .reveal-prep {
-    animation: heroEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes heroEntrance { to { opacity: 1; transform: translateY(0); } }
 
 
 /* ==========================================================================
@@ -529,7 +555,7 @@ footer {
     .hero-content p { margin-left: auto; margin-right: auto; }
     .hero-buttons { display: flex; justify-content: center; gap: 16px; }
     
-    .services-grid, .projects-grid {
+    .services-grid, .projects-grid, .process-sequence {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -585,4 +611,5 @@ footer {
     .project.active .project-body {
         padding: 0 20px 20px 20px;
     }
-}
+          }
+           
