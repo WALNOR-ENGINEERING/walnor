@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* FONT - Musí být striktně na prvním řádku souboru */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* RESET */
 * {
@@ -157,14 +157,14 @@ p {
     overflow: hidden;
     padding: 0 20px;
     opacity: 0;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, opacity 0.3s ease;
+    /* Plynulá transition upravená pro hladkou spolupráci s novým JS */
+    transition: max-height 0.35s ease-out, opacity 0.25s ease;
 }
 
-/* Stav, kdy JS přidá třídu active */
+/* Aktivní stav řízený přes JS, který mění opacitu (výšku mění přímo skript) */
 .project.active .project-body {
-    max-height: 1200px; /* Zvýšeno pro případ delšího textu a galerie */
-    padding: 10px 20px 25px 20px;
     opacity: 1;
+    padding: 10px 20px 25px 20px;
 }
 
 /* HERO BACKGROUND GLOW EFFECTS */
