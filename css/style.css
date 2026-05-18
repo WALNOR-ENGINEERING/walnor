@@ -125,3 +125,46 @@ p {
 .accent {
     color: var(--accent);
 }
+
+.project {
+
+    background: #1a1d22;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.project-header {
+
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+
+    cursor: pointer;
+}
+
+.project-header img {
+
+    width: 120px;
+    border-radius: 10px;
+}
+
+.project-body {
+
+    max-height: 0;
+    overflow: hidden;
+
+    padding: 0 20px;
+
+    transition: 0.4s ease;
+    opacity: 0;
+}
+
+.project.active .project-body {
+
+    max-height: 800px;
+    padding: 20px;
+    opacity: 1;
+}
