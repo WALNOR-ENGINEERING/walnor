@@ -1,5 +1,5 @@
 /* ==========================================================================
-   WALNOR DESIGN SYSTEM - VERSION 1 (OPTIMIZED)
+   WALNOR DESIGN SYSTEM - VERSION 1 (COMPLETE INTEGRATED)
    ========================================================================== */
 
 /* FONT - Musí být striktně na prvním řádku souboru */
@@ -66,7 +66,36 @@ p {
     font-size: 18px;
 }
 
-/* BUTTONS BASE - Podpora pro obě varianty tvého zápisu */
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* SIMPLE UTILITIES */
+.muted { color: var(--text-soft); }
+.accent { color: var(--accent); }
+
+
+/* ==========================================================================
+   INTERAKCE, TLAČÍTKA A TRANSFORMAČNÍ ROZHRANÍ
+   ========================================================================== */
+
+/* Společný základ pro plynulé chování prvků */
+.project-card,
+.service-card,
+.project,
+.language-button {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+    backface-visibility: hidden; /* Ochrana proti rozmazávání textu */
+}
+
+/* BUTTONS BASE - Podpora pro obě varianty tvé syntaxe */
 .button, .primary-button, .secondary-button {
     display: inline-block;
     padding: 14px 28px;
@@ -74,7 +103,7 @@ p {
     font-weight: 500;
     text-align: center;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.2s ease, opacity 0.2s ease;
     backface-visibility: hidden;
 }
 
@@ -100,79 +129,71 @@ p {
 .button-secondary:hover, .secondary-button:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
-/* PANELS & CARDS */
-.panel {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 16px;
+/* Hmatová odezva při aktivním kliknutí na libovolné tlačítko */
+.button:active, .primary-button:active, .secondary-button:active {
+    transform: scale(0.98) translateY(0);
 }
 
-/* CONTAINER */
-.container {
+
+/* ==========================================================================
+   LAYOUT STRÁNKY (NAVBAR, HERO, SECTIONS, GRIDS)
+   ========================================================================== */
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* SIMPLE UTILITIES */
-.muted { color: var(--text-soft); }
-.accent { color: var(--accent); }
-
-/* PROJECTS ACCORDION ENGINE */
-.project {
-    background: var(--panel); /* Sjednoceno s proměnnou design systému */
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    margin-bottom: 16px;
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    backface-visibility: hidden;
-}
-
-.project:hover {
-    transform: translateY(-4px); /* Plynulé zvednutí celé karty z úvodní lekce */
-    border-color: rgba(79, 209, 197, 0.3); /* Jemné podsvícení okraje do tealu */
-}
-
-.project-header {
+    z-index: 1000;
     display: flex;
-    gap: 20px;
-    padding: 20px;
-    cursor: pointer;
+    justify-content: space-between;
     align-items: center;
+    padding: 24px 48px;
+    background: rgba(20, 22, 24, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px); /* Podpora Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.project-header img {
-    width: 120px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+.nav-logo {
+    width: 170px;
+    display: block;
 }
 
-.project-body {
-    max-height: 0;
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navbar nav a {
+    color: var(--text-soft);
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--accent); /* Aktivní stránka a hover svítí inženýrským tealem */
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 100px;
+    position: relative;
     overflow: hidden;
-    padding: 0 20px;
-    opacity: 0;
-    /* Plynulá transition upravená pro hladkou spolupráci s novým JS */
-    transition: max-height 0.35s ease-out, opacity 0.25s ease;
-}
-
-/* Aktivní stav řízený přes JS, který mění opacitu (výšku mění přímo skript) */
-.project.active .project-body {
-    opacity: 1;
-    padding: 10px 20px 25px 20px;
 }
 
 /* HERO BACKGROUND GLOW EFFECTS */
-.hero {
-    position: relative; /* Nutné pro správné ukotvení absolutních prvků under */
-    overflow: hidden; /* Skryje svit, který by přečníval mimo monitor */
-}
-
 .hero::before {
     content: "";
     position: absolute;
@@ -195,4 +216,373 @@ p {
     left: -120px;
     z-index: 1;
     pointer-events: none;
+}
+
+.hero-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 2; /* Nad glow efekty */
+}
+
+.hero-content h1 { margin-bottom: 28px; }
+.hero-content p { max-width: 620px; margin-bottom: 42px; }
+.hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; }
+
+/* SECTIONS */
+section { padding: 120px 0; }
+.section-title { margin-bottom: 56px; }
+
+/* SERVICES GRID & CARD */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.service-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 42px;
+    min-height: 220px;
+}
+
+.service-card h3 { margin-bottom: 18px; }
+.service-card p { font-size: 16px; }
+
+/* HOMEPAGE STATICKÝ GRID (Pokud ho využíváš) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+}
+
+.project-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-content { padding: 28px; }
+.project-content h3 { margin-bottom: 16px; }
+
+
+/* ==========================================================================
+   DYNAMIC PROJECTS ACCORDION ENGINE (Propojení s projects.js)
+   ========================================================================== */
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project {
+    background: var(--panel); 
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.project:hover {
+    transform: translateY(-4px); 
+    border-color: rgba(79, 209, 197, 0.3); /* Jemné podsvícení okraje do tealu */
+}
+
+.project.active {
+    border-color: var(--accent);
+    background: rgba(28, 31, 35, 0.8);
+}
+
+.project-header {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+    align-items: center;
+    user-select: none;
+}
+
+.project-header img {
+    width: 120px;
+    height: 70px; /* Definovaná výška drží formát napříč načítáním */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.project-header h3 {
+    margin: 0;
+}
+
+/* Volitelný nápis napravo "Zobrazit detail" */
+.project-header .muted {
+    margin-left: auto;
+    font-size: 14px;
+    transition: color 0.25s ease;
+}
+
+.project-header:hover .muted {
+    color: var(--accent);
+}
+
+.project-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    opacity: 0;
+    transition: max-height 0.35s ease-out, opacity 0.25s ease;
+}
+
+/* Aktivní stav řízený přes JS */
+.project.active .project-body {
+    opacity: 1;
+    padding: 10px 20px 25px 140px; /* Široké odsazení zleva lícuje text s koncem loga */
+}
+
+
+/* ==========================================================================
+   KONTAKTNÍ FORMULÁŘ & FOOTER (Propojení s form.js)
+   ========================================================================== */
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-soft);
+}
+
+#contact-form input,
+#contact-form textarea {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.form-status {
+    display: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    animation: fadeInStatus 0.3s ease forwards;
+}
+
+.form-status.success {
+    display: block;
+    background: rgba(79, 209, 197, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(79, 209, 197, 0.2);
+}
+
+.form-status.error {
+    display: block;
+    background: rgba(255, 107, 107, 0.1);
+    color: #FF6B6B;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+@keyframes fadeInStatus {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* FOOTER */
+footer {
+    margin-top: 120px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 60px 0;
+}
+
+.footer-links { display: flex; flex-wrap: wrap; gap: 28px; }
+.footer-links a { color: var(--text-soft); transition: color 0.25s ease; }
+.footer-links a:hover { color: var(--accent); }
+
+
+/* ==========================================================================
+   LANGUAGE PAGE (Rozcestník)
+   ========================================================================== */
+
+.language-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-container { text-align: center; }
+.language-logo { width: 240px; margin: 0 auto 40px; display: block; }
+.language-buttons { margin-top: 40px; display: flex; justify-content: center; gap: 18px; }
+
+.language-button {
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+    font-weight: 500;
+}
+
+.language-button:hover {
+    border-color: var(--accent);
+    background: rgba(79, 209, 197, 0.05);
+    color: var(--accent);
+    transform: translateY(-4px);
+}
+
+
+/* ==========================================================================
+   SCROLL ANIMATION ENGINE (Propojení s animation.js)
+   ========================================================================== */
+
+.reveal-prep {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero .reveal-prep {
+    animation: heroEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroEntrance { to { opacity: 1; transform: translateY(0); } }
+
+
+/* ==========================================================================
+   WALNOR RESPONSIVE SYSTEM
+   ========================================================================== */
+
+/* LARGE DESKTOP */
+@media (max-width: 1400px) {
+    .container { max-width: 1100px; }
+}
+
+/* DESKTOP */
+@media (max-width: 1200px) {
+    h1 { font-size: 48px; }
+    h2 { font-size: 32px; }
+    .navbar { padding: 22px 32px; }
+    .hero-content { max-width: 680px; }
+}
+
+/* SMALL DESKTOP / TABLET */
+@media (max-width: 980px) {
+    .navbar { padding: 18px 20px; gap: 18px; align-items: center; }
+    .navbar nav { gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .hero { text-align: center; padding-top: 140px; padding-bottom: 80px; }
+    .hero-content { margin: 0 auto; }
+    .hero-content p { margin-left: auto; margin-right: auto; }
+    .hero-buttons { display: flex; justify-content: center; gap: 16px; }
+    
+    .services-grid, .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project.active .project-body {
+        padding: 10px 20px 25px 140px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    h1 { font-size: 38px; }
+    h2 { font-size: 28px; }
+    p { font-size: 16px; }
+    section { padding: 60px 0; }
+    .navbar { padding: 16px 20px; flex-direction: column; gap: 14px; }
+    .nav-logo { width: 140px; }
+    .navbar nav { gap: 18px; }
+    .hero { min-height: auto; padding-top: 120px; padding-bottom: 60px; }
+    .hero-content h1 { margin-bottom: 16px; }
+    .hero-content p { margin-bottom: 28px; }
+    .service-card, .project-card { padding: 20px; }
+    
+    .project.active .project-body {
+        padding: 10px 20px 25px 20px; /* Zmenšení odsazení textu na mobilech */
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    .navbar nav { gap: 12px; }
+    .navbar nav a { font-size: 14px; }
+    .hero-buttons { flex-direction: column; gap: 12px; }
+    .button, .primary-button, .secondary-button { width: 100%; }
+    
+    /* Přeskládání hlavičky projektu pod sebe */
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 20px;
+    }
+    .project-header img {
+        width: 64px;
+        height: 64px;
+    }
+    .project-header .muted {
+        margin-left: 0;
+        font-size: 13px;
+    }
+    .project.active .project-body {
+        padding: 0 20px 20px 20px;
+    }
 }
