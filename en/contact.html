@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | WALNOR</title>
-    <link rel="icon" href="../assets/logo/favicon.png">
+    
+    <link rel="icon" href="/WALNOR-ENGINEERING/assets/logo/favicon.png">
 
-    <!-- Jeden hlavní sloučený styl (obsahuje Layout, Design System i Responzivitu) -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/WALNOR-ENGINEERING/css/style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
     <a href="index.html">
-        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
+        <img src="/WALNOR-ENGINEERING/assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
     </a>
     <nav>
         <a href="index.html">Home</a>
@@ -24,12 +23,11 @@
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html" class="active">Contact</a>
-        <a href="../index.html">CZ</a>
+        <a href="/WALNOR-ENGINEERING/index.html">CZ</a>
     </nav>
 </header>
 
 <main>
-    <!-- HERO -->
     <section class="hero" style="min-height: 60vh;">
         <div class="container">
             <div class="hero-content reveal-prep">
@@ -41,57 +39,47 @@
         </div>
     </section>
 
-    <!-- CONTACT FORM -->
     <section>
         <div class="container">
-            <!-- Převedeno na tvůj strukturovaný formulář s ID pro form.js -->
             <form id="contact-form" class="reveal-prep" action="https://formspree.io/f/YOUR_ID" method="POST" novalidate>
                 
-                <!-- NAME -->
                 <div class="form-group">
                     <label for="form-name">Name</label>
                     <input type="text" id="form-name" name="name" required placeholder="John Doe">
                 </div>
 
-                <!-- COMPANY -->
                 <div class="form-group">
                     <label for="form-company">Company</label>
                     <input type="text" id="form-company" name="company" placeholder="Company Name, Ltd.">
                 </div>
 
-                <!-- EMAIL -->
                 <div class="form-group">
                     <label for="form-email">Email</label>
                     <input type="email" id="form-email" name="email" required placeholder="john.doe@company.com">
                 </div>
 
-                <!-- MESSAGE -->
                 <div class="form-group">
                     <label for="form-message">Project Description</label>
                     <textarea id="form-message" name="message" rows="8" required placeholder="Please describe your technical problem, boundary conditions, or goals..."></textarea>
                 </div>
 
-                <!-- GDPR -->
                 <div style="margin-top: 28px; margin-bottom: 36px; display: flex; gap: 12px; align-items: flex-start;">
                     <input type="checkbox" id="form-gdpr" required style="margin-top: 6px;">
                     <label for="form-gdpr" style="font-size: 14px; line-height: 1.6; color: var(--text-soft); cursor: pointer;">
-                        I agree with the <a href="terms.html" style="color: var(--accent);">Terms and Conditions</a> and <a href="privacy.html" style="color: var(--accent);">Privacy Policy</a>.
+                        I agree with the <a href="/WALNOR-ENGINEERING/legal/terms.html" style="color: var(--accent);">Terms and Conditions</a> and <a href="/WALNOR-ENGINEERING/legal/privacy.html" style="color: var(--accent);">Privacy Policy</a>.
                     </label>
                 </div>
 
-                <!-- BUTTON -->
                 <button type="submit" class="primary-button">
                     <span class="btn-text">Send Inquiry</span>
                 </button>
 
-                <!-- Skrytý kontejner pro hlášky o úspěchu/chybě z JavaScriptu -->
                 <div id="form-status-msg" class="form-status"></div>
 
             </form>
         </div>
     </section>
 
-    <!-- CTA / VALUE SECTION -->
     <section>
         <div class="container">
             <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
@@ -104,7 +92,6 @@
     </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-links">
@@ -112,15 +99,14 @@
             <a href="services.html">Services</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
+            <a href="/WALNOR-ENGINEERING/legal/terms.html">Terms</a>
+            <a href="/WALNOR-ENGINEERING/legal/privacy.html">Privacy</a>
         </div>
     </div>
 </footer>
 
-<!-- SCRIPT LOADING -->
-<script src="../js/animation.js"></script>
-<script src="../js/form.js"></script>
+<script src="/WALNOR-ENGINEERING/js/animation.js"></script>
+<script src="/WALNOR-ENGINEERING/js/form.js"></script>
 
 </body>
 </html>
