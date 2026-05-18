@@ -1,8 +1,9 @@
+/* Karty projektů a služeb */
 .project-card,
-.service-card,
-.primary-button,
-.secondary-button {
-    transition: 0.3s;
+.service-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Ochrana proti rozmazávání textu při transformaci */
+    backface-visibility: hidden; 
 }
 
 .project-card:hover,
@@ -10,7 +11,13 @@
     transform: translateY(-5px);
 }
 
+/* Tlačítka */
+.primary-button,
+.secondary-button {
+    transition: opacity 0.2s ease-in-out;
+}
+
 .primary-button:hover,
 .secondary-button:hover {
-    opacity: 0.8;
+    opacity: 0.85; /* Lehce jemnější zprůhlednění, 0.8 už může být moc světlé */
 }
