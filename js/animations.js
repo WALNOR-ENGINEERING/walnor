@@ -1,44 +1,51 @@
 console.log('WALNOR Animation System Ready');
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Nastavení parametrů pro IntersectionObserver
+    // 1. Výběr prvků, které chceme plynule odhalovat
+    const elementsToAnimate = document.querySelectorAll(
+        '.hero-content, .section-title, .service-card, .project, .project-card, .process-step, .form-group, footer'
+    );
+
+    // Záchranná brzda: Pokud prohlížeč nepodporuje IntersectionObserver, web hned normálně zobrazíme
+    if (!('IntersectionObserver' in window)) {
+        elementsToAnimate.forEach(el => el.classList.remove('reveal-prep'));
+        return;
+    }
+
+    // 2. Nastavení parametrů pro IntersectionObserver
     const observerOptions = {
         root: null,      // Sleduje se vůči výřezu obrazovky (viewportu)
-        rootMargin: '0px 0px -80px 0px', // Spustí se o 80px dříve, než prvek dorazí na spodní okraj (působí to přirozeněji)
-        threshold: 0.1   // Stačí, aby bylo vidět 10 % prvku, a animace se spustí
+        rootMargin: '0px 0px -60px 0px', // Spustí se o 60px dříve, než prvek dorazí na spodní okraj
+        threshold: 0.05   // Stačí, aby bylo vidět 5 % prvku, a okamžitě se spustí animace
     };
 
-    // 2. Definice chování, když prvek vstoupí na obrazovku
+    // 3. Definice chování, když prvek vstoupí na obrazovku
     const appearanceObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            // Pokud prvek vstoupil do zorného pole
             if (entry.isIntersecting) {
                 // Přidáme třídu, která v CSS spustí animaci
                 entry.target.classList.add('reveal-visible');
                 
-                // Jakmile se prvek jednou vykreslí, přestaneme ho sledovat (efektivita + výkon)
-                observer.unobserve(entry.target.value ?? entry.target);
+                // OPRAVENO: Čisté a bezpečné odhlášení prvku ze sledování
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // 3. Výběr prvků, které chceme plynule odhalovat
-    // Vybereme nadpisy sekcí, hrdinské texty, karty služeb a projektů
-    const elementsToAnimate = document.querySelectorAll(
-        '.hero-content > *, .section-title, .service-card, .project, .project-card, footer'
-    );
-
-    // Každému prvku dáme základní startovní třídu a zaregistrujeme ho do observeru
+    // 4. Příprava prvků a spuštění sledování
     elementsToAnimate.forEach((element, index) => {
-        element.classList.add('reveal-prep');
+        // Pokud prvek ještě nemá třídu reveal-prep z HTML, bezpečně ji přidáme
+        if (!element.classList.contains('reveal-prep')) {
+            element.classList.add('reveal-prep');
+        }
         
-        // Drobný inženýrský detail: Pokud je na stránce grid karet vedle sebe, 
-        // přidáme jim mírné zpoždění (stagger efekt), aby nenabíhaly mechanicky naráz
-        if (element.classList.contains('service-card') || element.classList.contains('project-card')) {
-            const delay = (index % 3) * 0.15; // První karta 0s, druhá 0.15s, třetí 0.3s...
+        // Stagger efekt (postupné nabíhání karet vedle sebe)
+        if (element.classList.contains('service-card') || element.classList.contains('project-card') || element.classList.contains('process-step')) {
+            const delay = (index % 4) * 0.12; // Jemné rozestupy 0s, 0.12s, 0.24s...
             element.style.transitionDelay = `${delay}s`;
         }
 
+        // Začneme prvek sledovat
         appearanceObserver.observe(element);
     });
 });
