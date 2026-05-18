@@ -1,7 +1,9 @@
-/* =========================
-   WALNOR DESIGN SYSTEM
-   VERSION 1
-   ========================= */
+/* ==========================================================================
+   WALNOR DESIGN SYSTEM - VERSION 1 (OPTIMIZED)
+   ========================================================================== */
+
+/* FONT - Musí být striktně na prvním řádku souboru */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap');
 
 /* RESET */
 * {
@@ -10,25 +12,18 @@
     box-sizing: border-box;
 }
 
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 /* ROOT COLORS */
 :root {
-
-    /* background */
+    /* Backgrounds */
     --bg: #141618;
     --panel: #1C1F23;
-
-    /* text */
+    /* Text */
     --text: #F3F6FA;
     --text-soft: #AEB7C2;
-
-    /* accent (engineering teal) */
+    /* Accent (Engineering Teal) */
     --accent: #4FD1C5;
-
-    /* borders */
-    --border: rgba(255,255,255,0.06);
+    /* Borders */
+    --border: rgba(255, 255, 255, 0.06);
 }
 
 /* BODY */
@@ -36,9 +31,9 @@ body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
-
     line-height: 1.6;
     font-size: 16px;
+    overflow-x: hidden; /* Pojistka proti přetečení prvků do stran */
 }
 
 /* LINKS */
@@ -71,38 +66,43 @@ p {
     font-size: 18px;
 }
 
-/* BUTTONS */
-.button {
+/* BUTTONS BASE - Podpora pro obě varianty tvého zápisu */
+.button, .primary-button, .secondary-button {
     display: inline-block;
     padding: 14px 28px;
     border-radius: 10px;
-
     font-weight: 500;
-
-    transition: 0.25s ease;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backface-visibility: hidden;
 }
 
 /* PRIMARY BUTTON */
-.button-primary {
+.button-primary, .primary-button {
     background: var(--accent);
     color: #0B0F12;
+    border: 1px solid var(--accent);
 }
 
-.button-primary:hover {
+.button-primary:hover, .primary-button:hover {
     opacity: 0.85;
+    transform: translateY(-2px); /* Jemný prémiový nadzvedávací efekt */
 }
 
 /* SECONDARY BUTTON */
-.button-secondary {
+.button-secondary, .secondary-button {
     border: 1px solid var(--border);
     color: var(--text);
+    background: transparent;
 }
 
-.button-secondary:hover {
+.button-secondary:hover, .secondary-button:hover {
     border-color: var(--accent);
+    color: var(--accent);
 }
 
-/* PANELS (cards základ) */
+/* PANELS & CARDS */
 .panel {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -118,102 +118,81 @@ p {
 }
 
 /* SIMPLE UTILITIES */
-.muted {
-    color: var(--text-soft);
-}
+.muted { color: var(--text-soft); }
+.accent { color: var(--accent); }
 
-.accent {
-    color: var(--accent);
-}
-
+/* PROJECTS ACCORDION ENGINE */
 .project {
-
-    background: #1a1d22;
+    background: var(--panel); /* Sjednoceno s proměnnou design systému */
+    border: 1px solid var(--border);
     border-radius: 16px;
     margin-bottom: 16px;
     overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backface-visibility: hidden;
+}
 
-    transition: 0.3s ease;
+.project:hover {
+    transform: translateY(-4px); /* Plynulé zvednutí celé karty z úvodní lekce */
+    border-color: rgba(79, 209, 197, 0.3); /* Jemné podsvícení okraje do tealu */
 }
 
 .project-header {
-
     display: flex;
     gap: 20px;
     padding: 20px;
-
     cursor: pointer;
+    align-items: center;
 }
 
 .project-header img {
-
     width: 120px;
+    height: auto;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .project-body {
-
     max-height: 0;
     overflow: hidden;
-
     padding: 0 20px;
-
-    transition: 0.4s ease;
     opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, opacity 0.3s ease;
 }
 
+/* Stav, kdy JS přidá třídu active */
 .project.active .project-body {
-
-    max-height: 800px;
-    padding: 20px;
+    max-height: 1200px; /* Zvýšeno pro případ delšího textu a galerie */
+    padding: 10px 20px 25px 20px;
     opacity: 1;
 }
 
+/* HERO BACKGROUND GLOW EFFECTS */
+.hero {
+    position: relative; /* Nutné pro správné ukotvení absolutních prvků under */
+    overflow: hidden; /* Skryje svit, který by přečníval mimo monitor */
+}
+
 .hero::before {
-
     content: "";
-
     position: absolute;
-
     width: 700px;
     height: 700px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,255,180,0.12) 0%,
-            rgba(0,255,180,0.04) 35%,
-            transparent 70%
-        );
-
+    background: radial-gradient(circle, rgba(0,255,180,0.12) 0%, rgba(0,255,180,0.04) 35%, transparent 70%);
     top: -200px;
     right: -200px;
-
-    z-index: 2;
-
+    z-index: 1;
     pointer-events: none;
 }
 
 .hero::after {
-
     content: "";
-
     position: absolute;
-
     width: 500px;
     height: 500px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,120,255,0.10) 0%,
-            transparent 70%
-        );
-
+    background: radial-gradient(circle, rgba(0,120,255,0.10) 0%, transparent 70%);
     bottom: -200px;
     left: -120px;
-
-    z-index: 2;
-
+    z-index: 1;
     pointer-events: none;
 }
