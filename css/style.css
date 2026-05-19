@@ -194,6 +194,11 @@ p {
     overflow: hidden;
 }
 
+.hero .container {
+    width: 100%;
+    margin-top: 40px;
+}
+
 /* HERO BACKGROUND GLOW EFFECTS */
 .hero::before {
     content: "";
