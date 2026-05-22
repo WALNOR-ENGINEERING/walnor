@@ -25,10 +25,29 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.appendChild(statusMessage);
         }
 
-        // 2. Základní klientská validace
-        const emailInput = contactForm.querySelector('input[type="email"]');
+        // 2. Základní klientská validace (UPRAVENO)
+        const nameInput = document.getElementById('form-name');
+        const emailInput = document.getElementById('form-email');
+        const messageInput = document.getElementById('form-message');
+        const gdprCheckbox = document.getElementById('form-gdpr');
+
+        // Kontrola, zda jsou vyplněna všechna povinná textová pole
+        if (nameInput && emailInput && messageInput) {
+            if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+                showStatus(statusMessage, 'Please fill in all required fields (Name, Email and Project Description).', 'error');
+                return;
+            }
+        }
+
+        // Kontrola formátu e-mailu
         if (emailInput && !validateEmail(emailInput.value)) {
             showStatus(statusMessage, 'Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Kontrola zaškrtnutí souhlasu s podmínkami (GDPR)
+        if (gdprCheckbox && !gdprCheckbox.checked) {
+            showStatus(statusMessage, 'You must agree with the Terms and Conditions and Privacy Policy to proceed.', 'error');
             return;
         }
 
@@ -90,14 +109,17 @@ function validateEmail(email) {
 // Přepínání stavu tlačítka (loading animace / disabled)
 function setLoadingState(button, isLoading, originalText) {
     if (!button) return;
+    const btnText = button.querySelector('.btn-text');
+    const targetElement = btnText ? btnText : button;
+
     if (isLoading) {
         button.disabled = true;
         button.style.opacity = '0.7';
-        button.innerHTML = `<span class="spinner"></span> Sending...`;
+        targetElement.innerHTML = `<span class="spinner"></span> Sending...`;
     } else {
         button.disabled = false;
         button.style.opacity = '1';
-        button.innerHTML = originalText;
+        targetElement.innerHTML = originalText;
     }
 }
 
