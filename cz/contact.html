@@ -3,107 +3,290 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | WALNOR</title>
-    
-    <link rel="icon" href="../assets/logo/favicon.png">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Kontakt | WALNOR</title>
+
+    <link rel="icon"
+          href="../assets/logo/favicon.png">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
 </head>
 
 <body>
 
 <header class="navbar">
+
     <a href="index.html">
-        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
+
+        <img src="../assets/logo/walnor-logo-light.png"
+             class="nav-logo"
+             alt="WALNOR Engineering Logo">
+
     </a>
+
     <nav>
-        <a href="index.html">Úvod</a>
+
+        <a href="index.html">Domů</a>
         <a href="about.html">O nás</a>
         <a href="services.html">Služby</a>
         <a href="projects.html">Projekty</a>
         <a href="contact.html" class="active">Kontakt</a>
         <a href="../en/index.html">EN</a>
+
     </nav>
+
 </header>
 
+
 <main>
-    <section class="hero" style="min-height: 60vh;">
+
+    <!-- HERO -->
+
+    <section class="hero"
+             style="min-height: 60vh;">
+
         <div class="container">
+
             <div class="hero-content reveal-prep">
-                <h1>Poptat inženýrskou analýzu</h1>
+
+                <h1>
+                    Poptávka technické analýzy
+                </h1>
+
                 <p>
-                    Popište váš projekt, inženýrský problém nebo cíle optimalizace.
+                    Popište váš projekt, technický problém nebo cíl optimalizace. WALNOR poskytuje technické analýzy a interpretaci výsledků se zaměřením na reálné průmyslové aplikace a praktická technická řešení.
                 </p>
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- CONTACT FORM -->
+
     <section>
+
         <div class="container">
-            <form id="contact-form" class="reveal-prep" action="https://formspree.io" method="POST" novalidate>
-                
-                <div class="form-group">
-                    <label for="form-name">Jméno a příjmení</label>
-                    <input type="text" id="form-name" name="name" required placeholder="Jan Novák">
-                </div>
+
+            <form id="contact-form"
+                  class="reveal-prep"
+                  action="https://formspree.io/f/mojbwjld"
+                  method="POST"
+                  novalidate>
+
+
+                <!-- NAME -->
 
                 <div class="form-group">
-                    <label for="form-company">Firma</label>
-                    <input type="text" id="form-company" name="company" placeholder="Název firmy, s.r.o.">
-                </div>
 
-                <div class="form-group">
-                    <label for="form-email">E-mail</label>
-                    <input type="email" id="form-email" name="email" required placeholder="jan.novak@firma.cz">
-                </div>
+                    <label for="form-name">
 
-                <div class="form-group">
-                    <label for="form-message">Popis projektu</label>
-                    <textarea id="form-message" name="message" rows="8" required placeholder="Prosím, popište váš technický problém, okrajové podmínky nebo očekávané cíle..."></textarea>
-                </div>
+                        Jméno
 
-                <div style="margin-top: 28px; margin-bottom: 36px; display: flex; gap: 12px; align-items: flex-start;">
-                    <input type="checkbox" id="form-gdpr" required style="margin-top: 6px;">
-                    <label for="form-gdpr" style="font-size: 14px; line-height: 1.6; color: var(--text-soft); cursor: pointer;">
-                        Souhlasím s <a href="terms.html" style="color: var(--accent);">Obchodními podmínkami</a> a <a href="privacy.html" style="color: var(--accent);">Zásadami ochrany soukromí</a>.
                     </label>
+
+                    <input type="text"
+                           id="form-name"
+                           name="name"
+                           required
+                           placeholder="Jan Novák">
+
                 </div>
 
-                <button type="submit" class="primary-button">
-                    <span class="btn-text">Odeslat poptávku</span>
+
+                <!-- COMPANY -->
+
+                <div class="form-group">
+
+                    <label for="form-company">
+
+                        Firma
+
+                    </label>
+
+                    <input type="text"
+                           id="form-company"
+                           name="company"
+                           placeholder="Firma s.r.o.">
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="form-email">
+
+                        E-mail
+
+                    </label>
+
+                    <input type="email"
+                           id="form-email"
+                           name="email"
+                           required
+                           placeholder="jan.novak@firma.cz">
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="form-message">
+
+                        Popis projektu
+
+                    </label>
+
+                    <textarea id="form-message"
+                              name="message"
+                              rows="8"
+                              required
+                              placeholder="Popište váš technický problém, chování systému, cíl optimalizace, provozní podmínky nebo očekávaný výsledek..."></textarea>
+
+                </div>
+
+
+                <!-- GDPR -->
+
+                <div style="
+                    margin-top: 28px;
+                    margin-bottom: 36px;
+
+                    display: flex;
+                    gap: 12px;
+
+                    align-items: flex-start;
+                ">
+
+                    <input type="checkbox"
+                           id="form-gdpr"
+                           required
+                           style="margin-top: 6px;">
+
+                    <label for="form-gdpr"
+                           style="
+                                font-size: 14px;
+                                line-height: 1.6;
+                                color: var(--text-soft);
+                                cursor: pointer;
+                           ">
+
+                        Souhlasím s
+                        <a href="terms.html"
+                           style="color: var(--accent);">
+
+                            obchodními podmínkami
+
+                        </a>
+                        a
+                        <a href="privacy.html"
+                           style="color: var(--accent);">
+
+                            zásadami ochrany osobních údajů
+
+                        </a>.
+
+                    </label>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button type="submit"
+                        class="primary-button">
+
+                    <span class="btn-text">
+
+                        Odeslat poptávku
+
+                    </span>
+
                 </button>
 
-                <div id="form-status-msg" class="form-status"></div>
+
+                <!-- STATUS -->
+
+                <div id="form-status-msg"
+                     class="form-status">
+
+                </div>
 
             </form>
+
         </div>
+
     </section>
+
+
+    <!-- CTA -->
 
     <section>
+
         <div class="container">
-            <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
-                <h2 style="margin-bottom: 24px;">Inženýrská řešení na míru</h2>
-                <p style="max-width: 720px; margin: 0 auto;">
-                    Každý průmyslový systém vyžaduje individuální přístup, technické porozumění a reálné inženýrské vyhodnocení.
+
+            <div class="service-card reveal-prep"
+                 style="
+                    padding: 60px;
+                    text-align: center;
+                    min-height: auto;
+                 ">
+
+                <h2 style="margin-bottom: 24px;">
+
+                    Technická řešení na míru
+
+                </h2>
+
+                <p style="
+                    max-width: 720px;
+                    margin: 0 auto;
+                ">
+
+                    Každý průmyslový systém vyžaduje individuální technický přístup, realistické vyhodnocení a praktickou optimalizaci. WALNOR se zaměřuje na technická řešení, která pomáhají zvyšovat efektivitu, omezovat technické problémy a podporovat správná technická rozhodnutí.
+
                 </p>
+
             </div>
+
         </div>
+
     </section>
+
 </main>
 
+
+<!-- FOOTER -->
+
 <footer>
+
     <div class="container">
+
         <div class="footer-links">
+
             <a href="about.html">O nás</a>
             <a href="services.html">Služby</a>
             <a href="projects.html">Projekty</a>
             <a href="contact.html">Kontakt</a>
             <a href="terms.html">Podmínky</a>
             <a href="privacy.html">Soukromí</a>
+
         </div>
+
     </div>
+
 </footer>
+
 
 <script src="../js/animation.js"></script>
 <script src="../js/form.js"></script>
