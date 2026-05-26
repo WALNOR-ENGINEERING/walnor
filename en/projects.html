@@ -6,15 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | WALNOR</title>
     
-    <link rel="icon" href="../assets/logo/favicon.png">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+    <link rel="icon" href="/walnor/assets/logo/favicon.png">
 
+    <link rel="stylesheet" href="/walnor/css/style.css">
+    
+    <style>
+        .project-body h4 {
+            color: var(--accent);
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .project-body p {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .gallery {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: calc(50% - 8px);
+            min-width: 260px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+    
 <body>
 
 <header class="navbar">
     <a href="index.html">
-        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
+        <img src="/walnor/assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
     </a>
     <nav>
         <a href="index.html">Home</a>
@@ -22,167 +52,123 @@
         <a href="services.html">Services</a>
         <a href="projects.html" class="active">Projects</a>
         <a href="contact.html">Contact</a>
-        <a href="../cz/index.html">CZ</a>
+        <a href="/walnor/index.html">CZ</a>
     </nav>
 </header>
 
 <main>
-    <section class="hero" style="min-height: 40vh; display: flex; align-items: center;">
+    <section class="hero" style="min-height: 70vh;">
         <div class="container">
             <div class="hero-content reveal-prep">
-                <h1>Engineering Portfolio</h1>
-                <p>
-                    Explore our case studies demonstrating advanced physics computations, rigorous boundary calibrations, and targeted design optimizations.
-                </p>
+                <h1>Engineering Projects and Technical Results</h1>
+                <p>Selected engineering analyses, optimization studies and industrial system evaluations focused on real-world applications.</p>
             </div>
         </div>
     </section>
 
-    <section style="padding: 60px 0 120px 0;">
+    <section>
         <div class="container">
-            <div class="projects-container" id="projects-container">
-                
-                <div class="project-accordion reveal-prep">
-                    <div class="project-trigger">
-                        <div class="trigger-left">
-                            <img src="../assets/projects/thumb-cyclone.jpg" alt="Cyclone Separator Optimization" class="project-thumb">
+            <h2 class="section-title reveal-prep">Selected Work</h2>
+
+            <div class="projects-container">
+
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="/walnor/assets/placeholders/project-placeholder.png" alt="Cyclone Separator Simulation Overview">
+                        <div>
                             <h3>Cyclone Separator Flow Optimization</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Analysis of airflow behavior, turbulence reduction and efficiency improvement.</p>
                         </div>
-                        <span class="accordion-icon"></span>
+                        <span class="muted">Show detail</span>
                     </div>
-                    <div class="project-content-panel">
-                        <div class="panel-inner">
-                            <p>
-                                Evaluation of multi-phase flow dynamics and particle separation efficiency inside an industrial cyclone separator. Using advanced turbulence modeling, we analyzed pressure drop characteristics and velocity fields to optimize the internal geometric parameters.
-                            </p>
-                            <div class="project-details-grid">
-                                <div class="detail-block">
-                                    <h4>Methodology</h4>
-                                    <p>Computational Fluid Dynamics (CFD), Reynolds Stress Model (RSM), Discrete Phase Modeling (DPM) for particle tracking.</p>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Objectives</h4>
-                                    <ul>
-                                        <li>Minimize total pressure drop across the system.</li>
-                                        <li>Maximize separation efficiency for particles under 5 micrometers.</li>
-                                        <li>Eliminate short-circuiting fluid pathways near the vortex finder.</li>
-                                    </ul>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Engineering Outcomes</h4>
-                                    <p>The modified vortex finder length and optimized inlet section geometry led to a 14% reduction in pressure drop while maintaining the required separation cut-off size, directly translating to lower fan energy consumption.</p>
-                                </div>
-                            </div>
+                    
+                    <div class="project-body">
+                        <h4>Problem</h4>
+                        <p>High turbulence caused significant energy losses and local erosion of the separator walls, reducing overall operational life cycle.</p>
+                        <h4>Solution</h4>
+                        <p>Advanced CFD simulation of internal gas-solid phase interactions. Geometry optimization of the inlet nozzle reduced vortex formation.</p>
+                        <h4>Result</h4>
+                        <p><strong>−18% pressure loss, +12% separation efficiency</strong> verified by subsequent physical testing.</p>
+                        <div class="gallery">
+                            <img src="/walnor/assets/placeholders/project-placeholder.png" alt="Velocity streamline chart">
+                            <img src="/walnor/assets/placeholders/project-placeholder.png" alt="Pressure drop comparison">
                         </div>
                     </div>
                 </div>
 
-                <div class="project-accordion reveal-prep">
-                    <div class="project-trigger">
-                        <div class="trigger-left">
-                            <img src="../assets/projects/thumb-rotation.jpg" alt="Rotating Fan Simulation" class="project-thumb">
-                            <h3>Rotating Flow & Impeller Aerodynamics</h3>
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="/walnor/assets/placeholders/project-placeholder.png" alt="Thermal Distribution Model">
+                        <div>
+                            <h3>Thermal Distribution Study</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Evaluation of heat transfer, cooling efficiency and thermal stability.</p>
                         </div>
-                        <span class="accordion-icon"></span>
+                        <span class="muted">Show detail</span>
                     </div>
-                    <div class="project-content-panel">
-                        <div class="panel-inner">
-                            <p>
-                                Aerodynamic analysis of an industrial fan stage designed for heavy-duty gas recirculation. The study focuses on transient blade loading, boundary layer separation on blade surfaces, and the interaction between the rotating impeller and stationary stator vanes.
-                            </p>
-                            <div class="project-details-grid">
-                                <div class="detail-block">
-                                    <h4>Methodology</h4>
-                                    <p>Transient CFD, Moving Reference Frame (MRF) for steady-state initialization, Sliding Mesh approach for transient validation, SST k-omega turbulence model.</p>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Objectives</h4>
-                                    <ul>
-                                        <li>Identify localized stall zones and aerodynamic backflow regimes.</li>
-                                        <li>Evaluate pressure fluctuations causing structural micro-vibrations.</li>
-                                        <li>Optimize the blade angle distribution for variable operational speed.</li>
-                                    </ul>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Engineering Outcomes</h4>
-                                    <p>Identified a critical flow separation bubble on the suction side of the blade at low flow rates. Redesigning the blade camber profile eliminated the stall zone, expanding the stable operational margin of the fan by 18%.</p>
-                                </div>
-                            </div>
+
+                    <div class="project-body">
+                        <h4>Problem</h4>
+                        <p>Uneven cooling rates causing severe thermal stress and premature micro-cracking in sensitive mechanical components.</p>
+                        <h4>Solution</h4>
+                        <p>Transient thermal analysis to evaluate heat flux. Redesign of cooling channels and optimization of fluid delivery lines.</p>
+                        <h4>Result</h4>
+                        <p><strong>Improved thermal stability by 25%</strong> and completely eliminated critical localized hot-spots.</p>
+                        <div class="gallery">
+                            <img src="/walnor/assets/placeholders/project-placeholder.png" alt="Temperature distribution contours">
                         </div>
                     </div>
                 </div>
 
-                <div class="project-accordion reveal-prep">
-                    <div class="project-force">
-                    <div class="project-trigger">
-                        <div class="trigger-left">
-                            <img src="../assets/projects/thumb-thermal.jpg" alt="Thermal Management Study" class="project-thumb">
-                            <h3>Thermal Cooling & Conjugate Heat Transfer</h3>
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="/walnor/assets/placeholders/project-placeholder.png" alt="Rotating Flow Analysis">
+                        <div>
+                            <h3>Rotating Flow Analysis</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Investigation of airflow around rotating components and aerodynamic performance.</p>
                         </div>
-                        <span class="accordion-icon"></span>
+                        <span class="muted">Show detail</span>
                     </div>
-                    <div class="project-content-panel">
-                        <div class="panel-inner">
-                            <p>
-                                Conjugate Heat Transfer (CHT) analysis simulating the simultaneous conduction within solid electronic components and forced convection cooling from surrounding fluid channels. Designed to resolve thermal stress accumulation in high-power industrial inverter assemblies.
-                            </p>
-                            <div class="project-details-grid">
-                                <div class="detail-block">
-                                    <h4>Methodology</h4>
-                                    <p>Conjugate Heat Transfer (CHT), Coupled Thermal-Fluid Solver, Volumetric Heat Source mapping based on operational electrical losses.</p>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Objectives</h4>
-                                    <ul>
-                                        <li>Locate hidden thermal hotspots under peak load conditions.</li>
-                                        <li>Optimize heatsink geometry (fin density and thickness).</li>
-                                        <li>Ensure uniform airflow distribution across all parallel cooling tracks.</li>
-                                    </ul>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Engineering Outcomes</h4>
-                                    <p>Revealed a flow stagnation zone behind the primary capacitor bank. By implementing air-guiding baffles and optimizing the heatsink fin spacing, maximum junction temperature was lowered by 22°C, significantly increasing component lifespan.</p>
-                                </div>
-                            </div>
-                        </div>
+
+                    <div class="project-body">
+                        <h4>Problem</h4>
+                        <p>Excessive aerodynamic drag around high-speed rotating parts, reducing mechanical transmission efficiency.</p>
+                        <h4>Solution</h4>
+                        <p>MRF (Moving Reference Frame) simulation to model rotational forces and modification of component housing geometry.</p>
+                        <h4>Result</h4>
+                        <p><strong>Aerodynamic drag reduced by 8%</strong>, leading to direct savings in engine power consumption.</p>
                     </div>
                 </div>
 
-                <div class="project-accordion reveal-prep">
-                    <div class="project-trigger">
-                        <div class="trigger-left">
-                            <img src="../assets/projects/thumb-multiphase.jpg" alt="Multiphase Flow Simulation" class="project-thumb">
-                            <h3>Multiphase Flow & Free Surface Dynamics</h3>
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="/walnor/assets/placeholders/project-placeholder.png" alt="Multiphase Particle Transport Simulation">
+                        <div>
+                            <h3>Multiphase Particle Transport</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Simulation of particle flow, dust behavior and separation efficiency.</p>
                         </div>
-                        <span class="accordion-icon"></span>
+                        <span class="muted">Show detail</span>
                     </div>
-                    <div class="project-content-panel">
-                        <div class="panel-inner">
-                            <p>
-                                Transient simulation of multi-phase liquid-gas interaction inside high-speed industrial filling systems. The analysis captures free-surface deformations, liquid splashing patterns, and potential air entrainment that could compromise product quality.
-                            </p>
-                            <div class="project-details-grid">
-                                <div class="detail-block">
-                                    <h4>Methodology</h4>
-                                    <p>Transient Multiphase Flow, Volume of Fluid (VOF) model, Geo-Reconstruct interface tracking scheme, dynamic mesh refinement.</p>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Objectives</h4>
-                                    <ul>
-                                        <li>Map free surface profile variations during rapid filling cycles.</li>
-                                        <li>Predict high-shear zones capable of causing fluid aeration or foaming.</li>
-                                        <li>Validate structural integrity of tank internal baffles against fluid impact.</li>
-                                    </ul>
-                                </div>
-                                <div class="detail-block">
-                                    <h4>Engineering Outcomes</h4>
-                                    <p>Quantified the exact timing and location of air entrapment loops during the injection phase. Modifying the nozzle submersion depth and filling speed curve suppressed interface turbulence, reducing air entrainment close to zero.</p>
-                                </div>
-                            </div>
-                        </div>
+
+                    <div class="project-body">
+                        <h4>Problem</h4>
+                        <p>High accumulation of dust particles in ducting dead zones, presenting an operational hazard and causing clogging.</p>
+                        <h4>Solution</h4>
+                        <p>DPM (Discrete Phase Model) track simulation to trace particle trajectories and implementation of auxiliary air jets.</p>
+                        <h4>Result</h4>
+                        <p><strong>95% dust reduction in critical areas</strong>, drastically lowering the maintenance window requirements.</p>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
+                <h2 style="margin-bottom: 24px;">Need a similar analysis?</h2>
+                <p style="max-width: 720px; margin: 0 auto 36px;">Each project can be adapted to specific industrial requirements and engineering conditions.</p>
+                <a href="contact.html" class="primary-button">Request Analysis</a>
             </div>
         </div>
     </section>
@@ -195,15 +181,14 @@
             <a href="services.html">Services</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
+            <a href="/walnor/legal/terms.html">Terms</a>
+            <a href="/walnor/legal/privacy.html">Privacy</a>
         </div>
     </div>
 </footer>
 
-<script src="../js/animation.js"></script>
-<script src="../js/projects.js"></script>
-
-</body>
-    </html>
+<script src="/walnor/js/animation.js"></script>
+<script src="/walnor/js/main.js"></script>
     
+</body>
+</html>
