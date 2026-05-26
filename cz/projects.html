@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="cs">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekty | WALNOR</title>
+    
+    <link rel="icon" href="../assets/logo/favicon.png">
+
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .project-body h4 {
+            color: var(--accent);
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .project-body p {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .gallery {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: calc(50% - 8px);
+            min-width: 260px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+    
+<body>
+
+<header class="navbar">
+    <a href="index.html">
+        <img src="../assets/logo/walnor-logo-light.png" class="nav-logo" alt="WALNOR Engineering Logo">
+    </a>
+    <nav>
+        <a href="index.html">Úvod</a>
+        <a href="about.html">O nás</a>
+        <a href="services.html">Služby</a>
+        <a href="projects.html" class="active">Projekty</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="../en/index.html">EN</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" style="min-height: 70vh;">
+        <div class="container">
+            <div class="hero-content reveal-prep">
+                <h1>Inženýrské projekty a technické výsledky</h1>
+                <p>Vybrané inženýrské analýzy, optimalizační studie a posudky průmyslových systémů zaměřené na reálné aplikace.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title reveal-prep">Vybraná práce</h2>
+
+            <div class="projects-container">
+
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="../assets/placeholders/project-placeholder.png" alt="Přehled simulace cyklónového separátoru">
+                        <div>
+                            <h3>Optimalizace proudění cyklónového separátoru</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Analýza chování proudění vzduchu, snížení turbulence a zvýšení účinnosti.</p>
+                        </div>
+                        <span class="muted">Zobrazit detail</span>
+                    </div>
+                    
+                    <div class="project-body">
+                        <h4>Problém</h4>
+                        <p>Vysoká turbulence způsobovala významné energetické ztráty a lokální erozi stěn separátoru, což zkracovalo celkový provozní životní cyklus zařízení.</p>
+                        <h4>Řešení</h4>
+                        <p>Pokročilá CFD simulace interních interakcí mezi plynnou a pevnou fází. Optimalizace geometrie vstupní trysky vedla ke zmírnění vzniku vírů.</p>
+                        <h4>Výsledek</h4>
+                        <p><strong>−18 % tlaková ztráta, +12 % účinnost separace</strong> ověřeno následným fyzickým testováním.</p>
+                        <div class="gallery">
+                            <img src="../assets/placeholders/project-placeholder.png" alt="Graf proudnic rychlosti">
+                            <img src="../assets/placeholders/project-placeholder.png" alt="Porovnání poklesu tlaku">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="../assets/placeholders/project-placeholder.png" alt="Model distribuce tepla">
+                        <div>
+                            <h3>Studie termální distribuce</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Vyhodnocení přenosu tepla, účinnosti chlazení a tepelné stability.</p>
+                        </div>
+                        <span class="muted">Zobrazit detail</span>
+                    </div>
+
+                    <div class="project-body">
+                        <h4>Problém</h4>
+                        <p>Nerovnoměrné rychlosti chlazení způsobovaly kritické tepelné namáhání a předčasný vznik mikrotrhlin v citlivých mechanických komponentech.</p>
+                        <h4>Řešení</h4>
+                        <p>Tranzitní termální analýza pro vyhodnocení tepelného toku. Redesign chladicích kanálů a optimalizace přívodního potrubí kapaliny.</p>
+                        <h4>Výsledek</h4>
+                        <p><strong>Zlepšení tepelné stability o 25 %</strong> a kompletní eliminace kritických lokalizovaných horkých míst (hot-spots).</p>
+                        <div class="gallery">
+                            <img src="../assets/placeholders/project-placeholder.png" alt="Kontury distribuce teploty">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="../assets/placeholders/project-placeholder.png" alt="Analýza rotujícího proudění">
+                        <div>
+                            <h3>Analýza rotujícího proudění</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Zkoumání proudění vzduchu kolem rotujících částí a aerodynamického výkonu.</p>
+                        </div>
+                        <span class="muted">Zobrazit detail</span>
+                    </div>
+
+                    <div class="project-body">
+                        <h4>Problém</h4>
+                        <p>Nadměrný aerodynamický odpor v okolí vysokorychlostních rotujících částí, který snižoval účinnost mechanického přenosu energie.</p>
+                        <h4>Řešení</h4>
+                        <p>Simulace metodou MRF (Moving Reference Frame) pro modelování rotačních sil a modifikace geometrie krytu komponentu.</p>
+                        <h4>Výsledek</h4>
+                        <p><strong>Snížení aerodynamického odporu o 8 %</strong>, což vedlo k přímým úsporám spotřeby energie pohonu.</p>
+                    </div>
+                </div>
+
+                <div class="project reveal-prep">
+                    <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+                        <img src="../assets/placeholders/project-placeholder.png" alt="Simulace vícefázového transportu částic">
+                        <div>
+                            <h3>Vícefázový transport částic</h3>
+                            <p class="muted" style="font-size: 15px; margin-top: 4px;">Simulace toku částic, chování prachu a účinnosti separace.</p>
+                        </div>
+                        <span class="muted">Zobrazit detail</span>
+                    </div>
+
+                    <div class="project-body">
+                        <h4>Problém</h4>
+                        <p>Vysoká akumulace prachových částic v mrtvých zónách potrubí, což představovalo provozní riziko a způsobovalo ucpávání systému.</p>
+                        <h4>Řešení</h4>
+                        <p>Simulace trasování částic pomocí DPM (Discrete Phase Model) ke sledování trajektorií a implementace pomocných vzduchových trysek.</p>
+                        <h4>Výsledek</h4>
+                        <p><strong>95% snížení prašnosti v kritických oblastech</strong>, což drasticky snížilo požadavky na frekvenci údržby.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="service-card reveal-prep" style="padding: 60px; text-align: center; min-height: auto;">
+                <h2 style="margin-bottom: 24px;">Potřebujete inženýrskou podporu?</h2>
+                <p style="max-width: 700px; margin: 0 auto 36px;">
+                    WALNOR poskytuje specializované inženýrské analýzy, přesné technické interpretace a robustní podporu při optimalizaci přizpůsobenou vašim průmyslovým aplikacím.
+                </p>
+                <a href="contact.html" class="primary-button">Odeslat poptávku</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="about.html">O nás</a>
+            <a href="services.html">Služby</a>
+            <a href="projects.html">Projekty</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="terms.html">Podmínky</a>
+            <a href="privacy.html">Soukromí</a>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/animation.js"></script>
+
+</body>
+</html>
